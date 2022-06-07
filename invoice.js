@@ -118,6 +118,15 @@ Vue.filter('asDate', function(value) {
   return date.isValid() ? date.format('MMMM DD, YYYY') : value;
 });
 
+/*ADDED FOR THE INVOICE SECTION - NEEDED A SHORT DATE*/
+Vue.filter('asShortDate', function(value) {
+  if (typeof(value) === 'number') {
+    value = new Date(value * 1000);
+  }
+  const date = moment.utc(value)
+  return date.isValid() ? date.format('MM DD, YYYY') : value;
+});
+
 function tweakUrl(url) {
   if (!url) { return url; }
   if (url.toLowerCase().startsWith('http')) {
