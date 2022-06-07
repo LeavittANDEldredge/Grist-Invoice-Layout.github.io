@@ -180,7 +180,7 @@
       
          <!-- TO ADD A TRUST AMOUNT -->
         <template v-if="invoice.TrustBal">
-          <p class="trustbal">Trust Balance: ${{ invoice.TrustBal }}</p>
+          <p class="trustbal">Trust Balance: {{ invoice.TrustBal | currency }}</p>
         </template>
 
         <template v-for="help in (invoice.Help ? [invoice.Help] : [])">
