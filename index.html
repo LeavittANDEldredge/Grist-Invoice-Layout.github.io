@@ -123,7 +123,7 @@
             </tr>
             <!-- NEW WAY WITH NO BRACKETS FOR CHOICE LIST------
  <tr v-for="item in invoice.Items">
-              <td>{{ item.Date | asDate }}</td>
+              <td>{{ item.Date | asShortDate }}</td>
               <td>{{ item.Service.join(", ") }}</td>
               <td>{{ item.Description }}</td>
               <td class="money">{{ item.Price | currency }}</td>
