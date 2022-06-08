@@ -75,6 +75,7 @@ table.items th {
 table.items td {
   background: #fff;
   padding: 4px;
+  vertical-align: top;
 }
 
 .client .title, .summary .title, table.items th, .help .title {
