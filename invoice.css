@@ -325,7 +325,7 @@ div.elf-logo{text-align:right;padding:25px 10px}
 .elf-logo img{width:125px;max-width:100%}
 .ProblemsPayBTN{font-size:14px;color:#a0a0a0;line-height:14px;margin-top:-10px}
 .DateWidth{width:12%; -webkit-print-color-adjust: exact !important;
-  color-adjust: exact !important;}
+  color-adjust: exact !important;white-space: nowrap;}
 .BilledWidth{width:17%; -webkit-print-color-adjust: exact !important;
-  color-adjust: exact !important;}
+  color-adjust: exact !important;white-space: nowrap;}
 
