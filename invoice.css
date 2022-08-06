@@ -63,6 +63,8 @@ table.items {
   border: 1px solid #4f4f4e;
   border-collapse: collapse;
   font-size:16px;
+   color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
 }
 
 table.items th {
