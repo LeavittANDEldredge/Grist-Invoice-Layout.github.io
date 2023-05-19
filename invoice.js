@@ -75,7 +75,8 @@ const data = {
 };
 let app = undefined;
 
-/*NEW VERSION TO REPLACE THE ONE BELOW 5-18-23*/
+/*NEW VERSION TO REPLACE THE ONE BELOW 5-18-23
+the new code gets rid of -0.00 and makes it 0.00*/
 Vue.filter('currency', formatNumberAsUSD)
 function formatNumberAsUSD(value) {
   if (typeof value !== "number") {
