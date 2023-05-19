@@ -75,7 +75,7 @@ const data = {
 };
 let app = undefined;
 
-/*NEW VERSION TO REPLACE THE ONE BELOW*/
+/*NEW VERSION TO REPLACE THE ONE BELOW 5-18-23
 Vue.filter('currency', formatNumberAsUSD)
 function formatNumberAsUSD(value) {
   if (typeof value !== "number") {
@@ -91,22 +91,22 @@ function formatNumberAsUSD(value) {
     return value;
   }
   return result;
-}
+}*/
 
 /* Old 5-28-23, updated by GRIST--- FOR THE DOLLAR SIGN ON FEES uses CURRENCY---*/
-//Vue.filter('currency', formatNumberAsUSD)
-//function formatNumberAsUSD(value) {
+Vue.filter('currency', formatNumberAsUSD)
+function formatNumberAsUSD(value) {
   /*ORIGINAL CODE ----> if (!value) { return '—'; }*/
-//  if (value === null || value === undefined) { return '—'; }
-//  const result = Number(value).toLocaleString('en', {
-//    style: 'currency', currency: 'USD'
-//  })
+  if (value === null || value === undefined) { return '—'; }
+  const result = Number(value).toLocaleString('en', {
+    style: 'currency', currency: 'USD'
+  })
   
-//  if (result.includes('NaN')) {
-//    return value;
-//  }
-//  return result;
-//}
+  if (result.includes('NaN')) {
+    return value;
+  }
+  return result;
+}
 /*TO ADD A PERCENT SIGN ON FEES*/
 Vue.filter('percentage', formatNumberAsPercentage)
 function formatNumberAsPercentage(value) {
