@@ -75,20 +75,38 @@ const data = {
 };
 let app = undefined;
 
-/* FOR THE DOLLAR SIGN ON FEES uses CURRENCY---*/
+/*NEW VERSION TO REPLACE THE ONE BELOW*/
 Vue.filter('currency', formatNumberAsUSD)
 function formatNumberAsUSD(value) {
-  /*ORIGINAL CODE ----> if (!value) { return '—'; }*/
-  if (value === null || value === undefined) { return '—'; }
-  const result = Number(value).toLocaleString('en', {
+  if (typeof value !== "number") {
+    return value || '—';      // falsy value would be shown as a dash.
+  }
+  value = Math.round(value * 100) / 100;    // Round to nearest cent.
+  value = (value === -0 ? 0 : value);       // Avoid negative zero.
+
+  const result = value.toLocaleString('en', {
     style: 'currency', currency: 'USD'
   })
-  
   if (result.includes('NaN')) {
     return value;
   }
   return result;
 }
+
+/* Old 5-28-23, updated by GRIST--- FOR THE DOLLAR SIGN ON FEES uses CURRENCY---*/
+//Vue.filter('currency', formatNumberAsUSD)
+//function formatNumberAsUSD(value) {
+  /*ORIGINAL CODE ----> if (!value) { return '—'; }*/
+//  if (value === null || value === undefined) { return '—'; }
+//  const result = Number(value).toLocaleString('en', {
+//    style: 'currency', currency: 'USD'
+//  })
+  
+//  if (result.includes('NaN')) {
+    return value;
+//  }
+//  return result;
+//}
 /*TO ADD A PERCENT SIGN ON FEES*/
 Vue.filter('percentage', formatNumberAsPercentage)
 function formatNumberAsPercentage(value) {
