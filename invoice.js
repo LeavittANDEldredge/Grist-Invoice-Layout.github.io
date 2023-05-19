@@ -103,7 +103,7 @@ function formatNumberAsUSD(value) {
 //  })
   
 //  if (result.includes('NaN')) {
-    return value;
+//    return value;
 //  }
 //  return result;
 //}
